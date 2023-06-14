@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+float calculate_percentage(float total_marks) {
+    return (total_marks / 300) * 100;
+}
+
+void print_summary(int roll_no, char name[], float phy_marks, float mat_marks, float chem_marks) {
+    float total_marks = phy_marks + mat_marks + chem_marks;
+    float percentage = calculate_percentage(total_marks);
+
+    printf("....Student Summary... \n");
+    printf("Roll Num : %d\n", roll_no);
+    printf("Name : %s\n", name);
+    printf("Phy Marks : %.2f\n", phy_marks);
+    printf("Mat Marks : %.2f\n", mat_marks);
+    printf("Che Marks : %.2f\n", chem_marks);
+    printf("Total Marks : %.2f\n", total_marks);
+    printf("Percentage : %.2f%%\n", percentage);
+}
+
+int main() {
+    int roll_no;
+    char name[100];
+    float phy_marks, mat_marks, chem_marks;
+
+    // Read input from the user
+    printf("Enter Roll No: ");
+    scanf("%d", &roll_no);
+    printf("Enter Name: ");
+    scanf(" %[^\n]s", name);
+    printf("Enter Phy Marks: ");
+    scanf("%f", &phy_marks);
+    printf("Enter Mat Marks: ");
+    scanf("%f", &mat_marks);
+    printf("Enter Chem Marks: ");
+    scanf("%f", &chem_marks);
+
+    // Print the student summary
+    print_summary(roll_no, name, phy_marks, mat_marks, chem_marks);
+
+    return 0;
+}

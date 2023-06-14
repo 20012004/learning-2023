@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main()
+{
+    int a,b;
+    printf("Enter a : \n");
+    printf("Enter b : \n");
+    scanf("%d",&a);
+    scanf("%d",&b);
+    int big = (a>b) ? a:b;
+    printf("%d",big);
+    return 0;
+}
