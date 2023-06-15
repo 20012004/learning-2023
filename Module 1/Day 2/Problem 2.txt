@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+void swap(void* a, void* b, size_t size) {
+    unsigned char* p = a;
+    unsigned char* q = b;
+    size_t i;
+
+    for (i = 0; i < size; i++) {
+        unsigned char temp = p[i];
+        p[i] = q[i];
+        q[i] = temp;
+    }
+}
+
+int main() {
+    int num1 = 10, num2 = 20;
+    printf("Before swap: num1 = %d, num2 = %d\n", num1, num2);
+    swap(&num1, &num2, sizeof(int));
+    printf("After swap: num1 = %d, num2 = %d\n", num1, num2);
+
+    double decimal1 = 3.14, decimal2 = 2.71828;
+    printf("Before swap: decimal1 = %lf, decimal2 = %lf\n", decimal1, decimal2);
+    swap(&decimal1, &decimal2, sizeof(double));
+    printf("After swap: decimal1 = %lf, decimal2 = %lf\n", decimal1, decimal2);
+
+    char char1 = 'A', char2 = 'B';
+    printf("Before swap: char1 = %c, char2 = %c\n", char1, char2);
+    swap(&char1, &char2, sizeof(char));
+    printf("After swap: char1 = %c, char2 = %c\n", char1, char2);
+
+    return 0;
+}
